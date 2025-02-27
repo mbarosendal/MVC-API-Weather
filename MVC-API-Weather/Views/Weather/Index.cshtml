@@ -1,0 +1,23 @@
+﻿@{
+	ViewData["Title"] = "Vejr Information";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (ViewData["Error"] != null)
+{
+	<div style="color: red;">
+		<p>@ViewData["Error"]</p>
+	</div>
+}
+else
+{
+	<h3>Vejret for @ViewData["City"]</h3>
+	<ul>
+		<li>Temperatur: @ViewData["Temperature"] °C</li>
+		<li>Luftfugtighed: @ViewData["Humidity"] %</li>
+		<li>Beskrivelse: @ViewData["Description"]</li>
+	</ul>
+
+	<img src="@ViewData["IconUrl"]" alt="Vejrikon" />
+}
